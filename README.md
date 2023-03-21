@@ -21,6 +21,10 @@ npm start
 ```
 Run on **localhost/3000**
 
+## **Live App**
+
+**https://64190c4bae9b9d00081be46d--gitrepos-mvst-0stain.netlify.app**
+
 ## Tech Stack
 
 **React TypeScript**
