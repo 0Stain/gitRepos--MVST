@@ -15,7 +15,7 @@ import { useState } from 'react';
 const Home = () => {
     const [user, setUser] = useState<UserProps>({} as UserProps);
     const [repositories, setRepositories] = useState<RepoProps[]>([]);
-    const [error, setError] = useState(false);
+    const [error] = useState(false);
 
 
   const handleUserSearch = (query: string) => {
