@@ -1,4 +1,4 @@
-export type UserProps = {
+export interface UserProps {
     avatar_url: string,
     login: string,
     location: string,
@@ -9,3 +9,5 @@ export type UserProps = {
     repos_url: string
 
 };
+
+export default UserProps;

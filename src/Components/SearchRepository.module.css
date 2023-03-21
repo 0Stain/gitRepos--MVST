@@ -1,15 +1,15 @@
-.user {
+.search {
     background-color: #345DA7;
-    padding: 2rem;
+    padding: 0.5rem;
     border-radius: 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
-.user img{
+.search img{
     width: 140px;
     height: 140px;
     border-radius: 50%;
@@ -45,7 +45,7 @@
 .stats div {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 0.5 rem;
 }
 
 .stats div:first-child {
@@ -55,21 +55,26 @@
     border-left: 1px solid #3B8AC4;
 }
 
-.stats .number {
+.stats .txt {
     background-color: #3B8AC4;
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
 }
+.stats .number {
+    background-color: #3B8AC4;
+    padding: 0.2rem 0.2rem;
+    border-radius: 90px;
+}
 
-.user a {
+.search a {
     text-align: center;
     background-color: #3B8AC4;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 50px;
     opacity: 0.8;
     transition: all 0.3s ease;
 }
 
-.user a:hover {
+.search a:hover {
     opacity: 1;
 }

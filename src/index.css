@@ -3,11 +3,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  color: #FFF;
+  color: #EFDBCB;
 }
 
 body {
-  background-color: #0e1129;
+  background-color: #EFDBCB;
   padding: 2rem;
 }
 
@@ -17,5 +17,5 @@ p {
 
 a {
   text-decoration: none;
-  color: #FFF;
+  color: #EFDBCB;
 }

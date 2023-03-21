@@ -1,53 +1,45 @@
 import { UserProps } from '../types/user';
-
+import {RepoProps} from '../types/repos';
+ 
 import Search from '../Components/Search';
+import SearchRepository from '../Components/SearchRepository';
+
 import User from '../Components/User';
+import Repos from '../Components/Repos';
 import Error from '../Components/Error';
 
 import { useState } from 'react';
 
 
+
 const Home = () => {
-    const [user, setUser] = useState<UserProps | null>(null);
+    const [user, setUser] = useState<UserProps>({} as UserProps);
+    const [repositories, setRepositories] = useState<RepoProps[]>([]);
     const [error, setError] = useState(false);
 
-    const loadUser = async(userName: string) => {
-        setError(false);
-        setUser(null);
 
+  const handleUserSearch = (query: string) => {
+    fetch(`https://api.github.com/users/${query}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setUser(data);
+        fetch(data.repos_url)
+          .then((response) => response.json())
+          .then((data) => setRepositories(data))
+          .catch((error) => console.log(error));
+      })
+      .catch((error) => console.log(error));
+  };
 
-        const res = await fetch(`https://api.github.com/users/${userName}`);
-
-        const data = await res.json();
-
-        if(res.status === 404)  {
-            setError(true);
-            setUser(null);
-            return;
-        } 
-
-        const {avatar_url, login, location, followers, following, public_repos, html_url, repos_url} = data;
-
-        const userData: UserProps = {
-            avatar_url,
-            login,
-            location,
-            followers,
-            following,
-            public_repos,
-            html_url,
-            repos_url,
-        }
-        setUser(userData);
-    }
   return (
-    <div>
-      <Search loadUser={loadUser}/>
+    <>
+      <Search onSearch={handleUserSearch} />
+      
       {user && <User {...user}/> }
-        {error && <Error/>}
+      {error && <Error/>}
+      <SearchRepository username={user.login} repositories={repositories} />
+    </>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Home
+export default Home;
