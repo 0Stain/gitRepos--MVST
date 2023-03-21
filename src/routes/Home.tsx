@@ -5,7 +5,7 @@ import Search from '../Components/Search';
 import SearchRepository from '../Components/SearchRepository';
 
 import User from '../Components/User';
-import Repos from '../Components/Repos';
+
 import Error from '../Components/Error';
 
 import { useState } from 'react';

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Input, List } from "antd";
 import classes from "./SearchRepository.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { BsEye } from "react-icons/bs";
+
 
 type SearchRepositoryProps = {
     username: string;
