@@ -41,7 +41,7 @@ const User = ({
       
             </div>  
             <Link to={html_url}>View Profile</Link>
-            <Link to={repos_url}>View Repositories</Link>
+            
     </div>
   )
 }
